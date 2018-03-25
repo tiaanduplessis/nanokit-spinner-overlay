@@ -1,6 +1,6 @@
 {
     "name": "nanokit-spinner-overlay",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A spinning overlay component for React Native",
     "license": "MIT",
     "repository": {
@@ -10,7 +10,9 @@
     "homepage": "https://github.com/tiaanduplessis/nanokit-spinner-overlay",
     "bugs": "https://github.com/tiaanduplessis/nanokit-spinner-overlay",
     "main": "index.js",
-    "files": ["index.js"],
+    "files": [
+        "index.js"
+    ],
     "scripts": {
         "test": "echo 'no tests'",
         "format": "prettier-standard index.js",
