@@ -5,24 +5,20 @@ import PropTypes from 'prop-types'
 function noop () {}
 
 const SpinnerOverlay = ({
-  visable,
-  animationType,
-  onRequestClose,
-  onShow,
+  visible,
   overlayStyle,
   color,
   containerStyle,
   overlayColor,
   size,
-  container
+  container,
+  ...props
 }) => {
   return (
     <Modal
-      visible={visable}
+      visible={visible}
       transparent
-      animationType={animationType}
-      onRequestClose={onRequestClose}
-      onShow={onShow}
+      {...props}
     >
       <View
         style={[
@@ -33,10 +29,10 @@ const SpinnerOverlay = ({
       >
         {container ? (
           <View style={[styles.container, containerStyle]}>
-            <ActivityIndicator color={color} size={size} animating={visable} />
+            <ActivityIndicator color={color} size={size} animating={visible} />
           </View>
         ) : (
-          <ActivityIndicator color={color} size={size} animating={visable} />
+          <ActivityIndicator color={color} size={size} animating={visible} />
         )}
       </View>
     </Modal>
@@ -45,7 +41,7 @@ const SpinnerOverlay = ({
 
 SpinnerOverlay.defaultProps = {
   container: false,
-  visable: false,
+  visible: false,
   animationType: 'slide',
   onRequestClose: noop,
   onShow: noop,
@@ -58,7 +54,7 @@ SpinnerOverlay.defaultProps = {
 
 SpinnerOverlay.propTypes = {
   container: PropTypes.bool,
-  visable: PropTypes.bool,
+  visible: PropTypes.bool,
   animationType: PropTypes.string,
   onRequestClose: PropTypes.func,
   onShow: PropTypes.func,
