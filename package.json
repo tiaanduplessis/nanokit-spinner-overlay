@@ -15,6 +15,7 @@
     ],
     "scripts": {
         "test": "echo 'no tests'",
+        "test:regression": "node test/index.js",
         "format": "prettier-standard index.js",
         "start": "npm run test",
         "precommit": "npm test",
@@ -30,6 +31,6 @@
         "react-native": "*"
     },
     "dependencies": {
-        "prop-types": "^15.6.0"
+        "prop-types": "^15.8.1"
     }
 }
